@@ -3,6 +3,10 @@
   font-family: $font-2;
   user-select: none;
 
+  @media (max-width: 700px) {
+    font-size: 2rem;
+  }
+
   &__left,
   &__right {
     position: absolute;

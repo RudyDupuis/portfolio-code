@@ -22,15 +22,16 @@ const DynamicText = () => {
 
     const removeLetter = () => {
       letterIndexRemoving--;
-      document
-        .querySelector(
-          `.${
-            words[wordIndex][letterIndexRemoving] !== " "
-              ? words[wordIndex][letterIndexRemoving] + letterIndexRemoving
-              : "esp" + letterIndexRemoving
-          }`
-        )
-        .remove();
+      const element = document.querySelector(
+        `.${
+          words[wordIndex][letterIndexRemoving] !== " "
+            ? words[wordIndex][letterIndexRemoving] + letterIndexRemoving
+            : "esp" + letterIndexRemoving
+        }`
+      );
+      if (element) {
+        element.remove();
+      }
     };
 
     const loop = () => {

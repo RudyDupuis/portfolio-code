@@ -1,4 +1,6 @@
-@mixin fallAnimation($left, $bottom, $name) {
+/************ Toolkit ************/
+
+@mixin fallToolkitAnimation($left, $bottom, $name) {
   $frame-name: $name;
   @keyframes #{$frame-name} {
     0% {
@@ -15,7 +17,34 @@
   }
 }
 
-@mixin imgSizePerWindowSize($width, $height) {
+@mixin animToolkitSizePerWindowSize(
+  $name,
+  $leftDefault,
+  $bottomDefault,
+  $left780,
+  $bottom780,
+  $left650,
+  $bottom650,
+  $left480,
+  $bottom480
+) {
+  @include fallToolkitAnimation($leftDefault, $bottomDefault, $name);
+  animation: $name 3s forwards;
+
+  @media (max-width: 780px) {
+    @include fallToolkitAnimation($left780, $bottom780, $name);
+  }
+
+  @media (max-width: 650px) {
+    @include fallToolkitAnimation($left650, $bottom650, $name);
+  }
+
+  @media (max-width: 480px) {
+    @include fallToolkitAnimation($left480, $bottom480, $name);
+  }
+}
+
+@mixin imgToolkitSizePerWindowSize($width, $height) {
   width: calc($width / 2);
   height: calc($height / 2);
 
@@ -27,5 +56,10 @@
   @media (max-width: 900px) {
     width: calc($width / 3);
     height: calc($height / 3);
+  }
+
+  @media (max-width: 500px) {
+    width: calc($width / 3.5);
+    height: calc($height / 3.5);
   }
 }

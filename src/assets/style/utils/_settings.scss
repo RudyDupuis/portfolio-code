@@ -19,10 +19,9 @@ $font-2: "font-2", sans-serif;
 
 $black: #171717ff;
 $white: #e4e4e4ff;
-$color-1: #433937ff;
-$color-2: #4f332eff;
-$color-3: #5c4944ff;
-$color-4: #c087769f;
+$color-1: #803611ff;
+$color-2: #be8242ff;
+$color-3: #abaab0ff;
 
 * {
   margin: 0;
@@ -39,7 +38,7 @@ a:visited {
   color: $white;
 }
 a:hover {
-  color: $color-4;
+  color: $color-3;
 }
 
 body {
