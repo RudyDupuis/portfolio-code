@@ -1,0 +1,39 @@
+header {
+  padding: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  user-select: none;
+
+  ul {
+    display: flex;
+
+    li {
+      margin-left: 10px;
+      font-family: $font-1-bold;
+      font-size: 1.4rem;
+      @media (max-width: 500px) {
+        font-size: 1rem;
+      }
+    }
+  }
+}
+
+.logo {
+  font-family: $font-2;
+  font-size: 2rem;
+}
+
+.portfolio {
+  ul {
+    visibility: hidden;
+  }
+
+  p:hover ~ ul {
+    visibility: visible;
+  }
+
+  ul:hover {
+    visibility: visible;
+  }
+}

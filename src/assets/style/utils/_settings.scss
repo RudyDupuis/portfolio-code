@@ -1,0 +1,51 @@
+@font-face {
+  font-family: "font-1";
+  src: url(../../fonts/ChakraPetch-Light.ttf);
+}
+
+@font-face {
+  font-family: "font-1-bold";
+  src: url(../../fonts/ChakraPetch-Bold.ttf);
+}
+
+@font-face {
+  font-family: "font-2";
+  src: url(../../fonts/Righteous-Regular.ttf);
+}
+
+$font-1: "font-1", sans-serif;
+$font-1-bold: "font-1-bold", sans-serif;
+$font-2: "font-2", sans-serif;
+
+$black: #171717ff;
+$white: #e4e4e4ff;
+$color-1: #433937ff;
+$color-2: #4f332eff;
+$color-3: #5c4944ff;
+$color-4: #c087769f;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style-type: none;
+  outline: none;
+  border: none;
+  text-decoration: none;
+}
+
+a,
+a:visited {
+  color: $white;
+}
+a:hover {
+  color: $color-4;
+}
+
+body {
+  color: $white;
+  font-family: $font-1;
+  width: 100%;
+  height: 100vh;
+  background: $black;
+}

@@ -1,0 +1,21 @@
+.slide-buttons {
+  font-size: 3rem;
+  font-family: $font-2;
+  user-select: none;
+
+  &__left,
+  &__right {
+    position: absolute;
+    z-index: 5;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  &__right {
+    right: 10px;
+  }
+
+  &__left {
+    left: 10px;
+  }
+}

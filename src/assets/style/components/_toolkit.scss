@@ -1,0 +1,143 @@
+.toolkit {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 200vh;
+  height: 65vh;
+  max-height: 200vw;
+  position: relative;
+
+  .kit {
+    position: relative;
+    animation: stiring 4s infinite;
+    cursor: pointer;
+
+    &__img {
+      background: url(../../img/toolkit.png) center/cover;
+      @include imgSizePerWindowSize(691px, 526px);
+    }
+
+    h2 {
+      position: absolute;
+      left: 50%;
+      bottom: 8%;
+      transform: translateX(-50%);
+      font-family: $font-2;
+
+      @media (max-width: 1100px) {
+        font-size: 1.2rem;
+      }
+
+      @media (max-width: 900px) {
+        font-size: 1rem;
+      }
+    }
+  }
+
+  .kit-fall {
+    align-self: flex-end;
+    animation: falling-box 0.5s;
+    cursor: inherit;
+  }
+
+  .tools {
+    &__container {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      visibility: hidden;
+
+      p {
+        opacity: 0;
+      }
+    }
+
+    &__hammer .tools__img {
+      background: url(../../img/hammer.png) center/cover;
+      @include imgSizePerWindowSize(269px, 257px);
+    }
+
+    &__measuring-tape .tools__img {
+      background: url(../../img/measuring-tape.png) center/cover;
+      @include imgSizePerWindowSize(314px, 146px);
+    }
+
+    &__saw .tools__img {
+      background: url(../../img/saw.png) center/cover;
+      @include imgSizePerWindowSize(548px, 144px);
+    }
+
+    &__screwdriver .tools__img {
+      background: url(../../img/screwdriver.png) center/cover;
+      @include imgSizePerWindowSize(445px, 66px);
+    }
+
+    &__spanner .tools__img {
+      background: url(../../img/spanner.png) center/cover;
+      @include imgSizePerWindowSize(376px, 276px);
+    }
+  }
+
+  .tools-fall {
+    .tools__container {
+      visibility: visible;
+
+      &:hover {
+        p {
+          opacity: 1;
+        }
+
+        .tools__img {
+          animation: stiring-continuously 2s infinite;
+        }
+      }
+    }
+
+    .tools__hammer {
+      @include fallAnimation(30%, 60%, hammer);
+      animation: hammer 3s forwards;
+
+      @media (max-width: 780px) {
+        @include fallAnimation(30%, 70%, hammer);
+      }
+    }
+
+    .tools__measuring-tape {
+      @include fallAnimation(75%, 20%, measuring-tape);
+      animation: measuring-tape 3s forwards;
+
+      @media (max-width: 780px) {
+        @include fallAnimation(65%, 50%, measuring-tape);
+      }
+    }
+
+    .tools__saw {
+      @include fallAnimation(20%, 20%, saw);
+      animation: saw 3s forwards;
+
+      @media (max-width: 780px) {
+        @include fallAnimation(40%, 50%, saw);
+      }
+    }
+
+    .tools__screwdriver {
+      @include fallAnimation(50%, 80%, screwdriver);
+      animation: screwdriver 3s forwards;
+
+      @media (max-width: 780px) {
+        @include fallAnimation(47%, 80%, screwdriver);
+      }
+    }
+
+    .tools__spanner {
+      @include fallAnimation(70%, 60%, spanner);
+      animation: spanner 3s forwards;
+
+      @media (max-width: 780px) {
+        @include fallAnimation(70%, 70%, spanner);
+      }
+    }
+  }
+}
