@@ -28,14 +28,16 @@ const PhotoOfMe = () => {
   };
 
   return (
-    <div className="photo-of-me" onClick={() => kickAnim()}>
-      <img src="./img/photo-of-me.png" alt="Ma tête" className="photo-1" />
-      <img
-        src="./img/photo-of-me-2.png"
-        alt="Ma tête qui s'est prit un coup de marteau"
-        className="photo-2"
-      />
-      <div className="hammer"></div>
+    <div className="photo-of-me">
+      <div className="photo-of-me__container" onClick={() => kickAnim()}>
+        <div className="photo-1"></div>
+        <div className="photo-2"></div>
+        <div className="hammer"></div>
+        <p>
+          Ne pas cliquer,
+          <br /> Merci.
+        </p>
+      </div>
     </div>
   );
 };
