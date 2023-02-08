@@ -1,0 +1,42 @@
+.photo-of-me {
+  position: absolute;
+  bottom: -30px;
+  left: 5%;
+  @include imgPhotoOfMeSizePerWindowSize(665px, 687px);
+  cursor: pointer;
+
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    @include imgPhotoOfMeSizePerWindowSize(665px, 687px);
+  }
+
+  .photo-2 {
+    visibility: hidden;
+  }
+
+  .hammer {
+    background: url(../../img/hammer.png) center/cover;
+    @include imgPhotoOfMeSizePerWindowSize(161px, 154px);
+    position: absolute;
+    left: 15%;
+    top: 20%;
+    visibility: hidden;
+  }
+
+  .hammer-active {
+    visibility: visible;
+    transform-origin: -50%;
+    animation: kicking-photo 0.7s forwards;
+  }
+}
+
+.photo-kick-anim {
+  .photo-1 {
+    visibility: hidden;
+  }
+  .photo-2 {
+    visibility: visible;
+  }
+}
