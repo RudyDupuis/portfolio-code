@@ -3,14 +3,14 @@ import SlideButtons from "../components/SlideButtons";
 import Header from "../components/Header";
 import Project from "../components/Project";
 
-const Project1 = () => {
+const Project3 = () => {
   return (
     <div>
       <Header />
-      <Project projectNumber={0} />
-      <SlideButtons right={"/projet-2"} left={"/infos"} />
+      <Project projectNumber={2} />
+      <SlideButtons right={"/contact"} left={"/projet-2"} />
     </div>
   );
 };
 
-export default Project1;
+export default Project3;

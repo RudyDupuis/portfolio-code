@@ -6,7 +6,7 @@ const Contact = () => {
   return (
     <div>
       <Header />
-      <SlideButtons left={"/projet-1"} />
+      <SlideButtons left={"/projet-3"} />
     </div>
   );
 };

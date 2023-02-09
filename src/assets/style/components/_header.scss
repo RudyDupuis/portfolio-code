@@ -4,9 +4,13 @@ header {
   display: flex;
   justify-content: space-between;
   user-select: none;
+  position: absolute;
+  top: 0;
+  left: 0;
 
   ul {
     display: flex;
+    position: relative;
 
     li {
       margin-left: 10px;
@@ -14,6 +18,14 @@ header {
       font-size: 1.4rem;
       @media (max-width: 500px) {
         font-size: 1rem;
+      }
+    }
+    ul {
+      position: absolute;
+      right: 0;
+
+      li {
+        width: 100%;
       }
     }
   }
