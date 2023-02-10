@@ -8,7 +8,9 @@ const Project = ({ projectNumber }) => {
     <section className="project">
       <div className="project__left">
         <h1>{currentProject.title}</h1>
-        <p>{currentProject.date}</p>
+        <p>
+          <i class="fa-solid fa-calendar-days"></i> {currentProject.date}
+        </p>
         <p>{currentProject.infos}</p>
       </div>
       <div className="project__right">
@@ -21,14 +23,14 @@ const Project = ({ projectNumber }) => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <button>Voir le site</button>
+            <button className="button">Voir le site</button>
           </a>
           <a
             href={currentProject.githubLink}
             target="_blank"
             rel="noopener noreferrer"
           >
-            <button>Voir le GitHub</button>
+            <button className="button">Voir le GitHub</button>
           </a>
         </div>
       </div>

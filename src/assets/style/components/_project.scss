@@ -31,6 +31,9 @@
       width: 80%;
       margin: 10px 0;
     }
+    i {
+      color: $color-2;
+    }
 
     @media (max-width: 550px) {
       h1 {
@@ -84,21 +87,6 @@
         height: 100%;
         flex-direction: row;
         margin: 50px 0;
-      }
-
-      button {
-        font-family: $font-2;
-        padding: 10px 20px;
-        cursor: pointer;
-        transition: 0.2s;
-
-        &:hover {
-          transform: translateX(5px);
-        }
-
-        &:active {
-          transform: scale(0.8);
-        }
       }
     }
   }
