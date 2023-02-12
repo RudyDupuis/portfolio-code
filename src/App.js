@@ -1,3 +1,4 @@
+import { AnimatePresence } from "framer-motion";
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import About from "./pages/About";
@@ -10,14 +11,16 @@ import Project3 from "./pages/Project3";
 const App = () => {
   return (
     <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Home />}></Route>
-        <Route path="/projet-1" element={<Project1 />}></Route>
-        <Route path="/projet-2" element={<Project2 />}></Route>
-        <Route path="/projet-3" element={<Project3 />}></Route>
-        <Route path="/contact" element={<Contact />}></Route>
-        <Route path="/infos" element={<About />}></Route>
-      </Routes>
+      <AnimatePresence>
+        <Routes>
+          <Route path="*" element={<Home />}></Route>
+          <Route path="/projet-1" element={<Project1 />}></Route>
+          <Route path="/projet-2" element={<Project2 />}></Route>
+          <Route path="/projet-3" element={<Project3 />}></Route>
+          <Route path="/contact" element={<Contact />}></Route>
+          <Route path="/infos" element={<About />}></Route>
+        </Routes>
+      </AnimatePresence>
     </BrowserRouter>
   );
 };

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { motion } from "framer-motion";
 
 const PhotoOfMe = () => {
   const [inProgress, setInProgress] = useState(false);
@@ -27,8 +28,23 @@ const PhotoOfMe = () => {
     }
   };
 
+  const variants = {
+    initial: {
+      y: 100,
+    },
+    final: {
+      transition: { duration: 0.5 },
+      y: 0,
+    },
+  };
+
   return (
-    <div className="photo-of-me">
+    <motion.div
+      className="photo-of-me"
+      initial="initial"
+      animate="final"
+      variants={variants}
+    >
       <div className="photo-of-me__container" onClick={() => kickAnim()}>
         <div className="photo-1"></div>
         <div className="photo-2"></div>
@@ -38,7 +54,7 @@ const PhotoOfMe = () => {
           <br /> Merci.
         </p>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

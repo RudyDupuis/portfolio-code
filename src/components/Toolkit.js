@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 const Toolkit = () => {
   const fallAnim = () => {
@@ -6,8 +7,25 @@ const Toolkit = () => {
     document.querySelector(".tools").classList.add("tools-fall");
   };
 
+  const variants = {
+    initial: {
+      y: -200,
+      opacity: 0,
+    },
+    final: {
+      transition: { duration: 0.7 },
+      y: 0,
+      opacity: 1,
+    },
+  };
+
   return (
-    <div className="toolkit">
+    <motion.div
+      className="toolkit"
+      initial="initial"
+      animate="final"
+      variants={variants}
+    >
       <div className="tools">
         <div className="tools__hammer tools__container">
           <div className="tools__img"></div>
@@ -34,7 +52,7 @@ const Toolkit = () => {
         <div className="kit__img"></div>
         <h2>Rudy Dupuis</h2>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

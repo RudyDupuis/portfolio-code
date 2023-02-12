@@ -1,0 +1,55 @@
+.project-1 {
+  .project__right--img {
+    transform-origin: 100% 0%;
+    animation: rotate-img-project1 0.3s;
+
+    @keyframes rotate-img-project1 {
+      0% {
+        transform: rotate(-5deg);
+      }
+      100% {
+        transform: rotate(0deg);
+      }
+    }
+  }
+
+  .project-anim-1 {
+    position: absolute;
+    top: -25%;
+    left: -20%;
+    width: 23%;
+    height: 36%;
+    background: url(../../img/hammer.webp) center/cover;
+    visibility: hidden;
+  }
+
+  .hammer-active {
+    visibility: visible;
+    transform-origin: -50%;
+    animation: hammer-project1 1.5s;
+
+    @keyframes hammer-project1 {
+      0% {
+        transform: rotate(0deg);
+      }
+      10% {
+        transform: rotate(-10deg);
+      }
+      25% {
+        transform: rotate(20deg);
+      }
+      40% {
+        transform: rotate(-10deg);
+      }
+      55% {
+        transform: rotate(20deg);
+      }
+      70% {
+        transform: rotate(-10deg);
+      }
+      85% {
+        transform: rotate(20deg);
+      }
+    }
+  }
+}

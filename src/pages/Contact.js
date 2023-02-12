@@ -3,8 +3,21 @@ import SlideButtons from "../components/SlideButtons";
 import Header from "../components/Header";
 import ContactForm from "../components/ContactForm";
 import { CopyToClipboard } from "react-copy-to-clipboard";
+import { motion } from "framer-motion";
 
 const Contact = () => {
+  const variants = {
+    initial: {
+      y: 100,
+      opacity: 0,
+    },
+    final: {
+      transition: { duration: 0.7 },
+      y: 0,
+      opacity: 1,
+    },
+  };
+
   return (
     <main className="contact">
       <Header />
@@ -32,7 +45,7 @@ const Contact = () => {
             </CopyToClipboard>
           </div>
         </div>
-        <footer>
+        <motion.footer initial="initial" animate="final" variants={variants}>
           <ul>
             <li>
               <a
@@ -54,10 +67,10 @@ const Contact = () => {
             </li>
           </ul>
           <p>
-            Rudy Dupuis - {new Date().getFullYear()}{" "}
-            <i className="fa-regular fa-copyright"></i>
+            Rudy Dupuis <i className="fa-regular fa-copyright"></i>{" "}
+            {new Date().getFullYear()}{" "}
           </p>
-        </footer>
+        </motion.footer>
       </div>
       <SlideButtons left={"/projet-3"} />
     </main>

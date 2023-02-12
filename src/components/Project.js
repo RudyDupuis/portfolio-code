@@ -1,20 +1,40 @@
 import React, { useState } from "react";
 import { projectsData } from "../data/projectsData";
+import { motion } from "framer-motion";
 
 const Project = ({ projectNumber }) => {
   const [currentProject] = useState(projectsData[projectNumber]);
 
+  const variants = {
+    initial: {
+      x: -100,
+      opacity: 0,
+    },
+    final: {
+      transition: { duration: 0.7 },
+      x: 0,
+      opacity: 1,
+    },
+  };
+
   return (
     <section className="project">
-      <div className="project__left">
+      <motion.div
+        className="project__left"
+        initial="initial"
+        animate="final"
+        variants={variants}
+      >
         <h1>{currentProject.title}</h1>
         <p>
-          <i class="fa-solid fa-calendar-days"></i> {currentProject.date}
+          <i className="fa-solid fa-calendar-days"></i> {currentProject.date}
         </p>
         <p>{currentProject.infos}</p>
-      </div>
+      </motion.div>
       <div className="project__right">
         <div className="project__right--img">
+          <div className="project-anim-1"></div>
+          <div className="project-anim-2"></div>
           <img src={currentProject.img} alt={currentProject.title} />
         </div>
         <div className="project__right--buttons">

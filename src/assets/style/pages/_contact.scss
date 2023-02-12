@@ -3,6 +3,7 @@
   display: grid;
   grid-template-columns: 70% 30%;
   grid-template-rows: 1fr;
+  overflow: hidden;
 
   @media (max-width: 800px) {
     grid-template-columns: 1fr;
@@ -38,6 +39,10 @@
         h3 {
           margin-top: 0;
         }
+
+        div {
+          margin-left: 5%;
+        }
       }
     }
 
@@ -55,8 +60,32 @@
       }
 
       i {
-        animation: stiring 4s infinite;
         transition: 0.2s;
+        animation: stiring-contact 4s infinite;
+
+        @keyframes stiring-contact {
+          43% {
+            transform: rotate(0deg);
+          }
+          44% {
+            transform: rotate(-6deg);
+          }
+          45% {
+            transform: rotate(-12deg);
+          }
+          50% {
+            transform: rotate(12deg);
+          }
+          55% {
+            transform: rotate(-12deg);
+          }
+          56% {
+            transform: rotate(-6deg);
+          }
+          57% {
+            transform: rotate(0deg);
+          }
+        }
       }
 
       &:hover {

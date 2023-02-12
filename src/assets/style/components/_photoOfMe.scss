@@ -44,16 +44,16 @@
   }
 
   .photo-1 {
-    background: url(../../img/photo-of-me-1.png) center/cover;
+    background: url(../../img/photo-of-me-1.webp) center/cover;
   }
 
   .photo-2 {
-    background: url(../../img/photo-of-me-2.png) center/cover;
+    background: url(../../img/photo-of-me-2.webp) center/cover;
     visibility: hidden;
   }
 
   .hammer {
-    background: url(../../img/hammer.png) center/cover;
+    background: url(../../img/hammer.webp) center/cover;
     position: absolute;
     left: 12%;
     top: 12%;
@@ -65,7 +65,19 @@
   .hammer-active {
     visibility: visible;
     transform-origin: -50%;
-    animation: kicking-photo 0.7s forwards;
+    animation: hammer-about 0.7s forwards;
+
+    @keyframes hammer-about {
+      0% {
+        transform: rotate(0deg);
+      }
+      25% {
+        transform: rotate(-10deg);
+      }
+      100% {
+        transform: rotate(20deg);
+      }
+    }
   }
 
   p {

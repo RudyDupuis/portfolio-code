@@ -1,5 +1,6 @@
 import React, { useRef } from "react";
 import emailjs from "@emailjs/browser";
+import { motion } from "framer-motion";
 import { init } from "@emailjs/browser";
 init(process.env.ID);
 
@@ -37,8 +38,25 @@ const ContactForm = () => {
       );
   };
 
+  const variants = {
+    initial: {
+      x: 100,
+      opacity: 0,
+    },
+    final: {
+      transition: { duration: 0.7 },
+      x: 0,
+      opacity: 1,
+    },
+  };
+
   return (
-    <section className="contact-form">
+    <motion.section
+      className="contact-form"
+      initial="initial"
+      animate="final"
+      variants={variants}
+    >
       <h1>Contactez-moi</h1>
       <form ref={form} onSubmit={sendEmail}>
         <input
@@ -61,7 +79,7 @@ const ContactForm = () => {
         <input type="submit" value="Envoyer" className="button" />
       </form>
       <div className="formMessage"></div>
-    </section>
+    </motion.section>
   );
 };
 

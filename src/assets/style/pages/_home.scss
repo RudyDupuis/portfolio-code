@@ -22,6 +22,15 @@
   }
 
   .input-bar {
-    animation: blinking 1s infinite;
+    animation: blinking-home 1s infinite;
+
+    @keyframes blinking-home {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
   }
 }

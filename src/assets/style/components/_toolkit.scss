@@ -1,3 +1,67 @@
+@mixin fallToolkitAnimation($left, $bottom, $name) {
+  $frame-name: $name;
+  @keyframes #{$frame-name} {
+    0% {
+      bottom: 5%;
+    }
+    75% {
+      left: 50%;
+      bottom: 55%;
+    }
+    100% {
+      bottom: $bottom;
+      left: $left;
+    }
+  }
+}
+
+@mixin animToolkitSizePerWindowSize(
+  $name,
+  $leftDefault,
+  $bottomDefault,
+  $left780,
+  $bottom780,
+  $left650,
+  $bottom650,
+  $left480,
+  $bottom480
+) {
+  @include fallToolkitAnimation($leftDefault, $bottomDefault, $name);
+  animation: $name 3s forwards;
+
+  @media (max-width: 780px) {
+    @include fallToolkitAnimation($left780, $bottom780, $name);
+  }
+
+  @media (max-width: 650px) {
+    @include fallToolkitAnimation($left650, $bottom650, $name);
+  }
+
+  @media (max-width: 480px) {
+    @include fallToolkitAnimation($left480, $bottom480, $name);
+  }
+}
+
+@mixin imgToolkitSizePerWindowSize($width, $height) {
+  width: calc($width / 2);
+  height: calc($height / 2);
+
+  @media (max-width: 1100px) {
+    width: calc($width / 2.5);
+    height: calc($height / 2.5);
+  }
+
+  @media (max-width: 900px) {
+    width: calc($width / 3);
+    height: calc($height / 3);
+  }
+
+  @media (max-width: 500px) {
+    width: calc($width / 3.5);
+    height: calc($height / 3.5);
+  }
+}
+
 .toolkit {
   display: flex;
   justify-content: center;
@@ -9,11 +73,35 @@
 
   .kit {
     position: relative;
-    animation: stiring 4s infinite;
     cursor: pointer;
+    animation: stiring-toolkit 4s infinite;
+
+    @keyframes stiring-toolkit {
+      43% {
+        transform: rotate(0deg);
+      }
+      44% {
+        transform: rotate(-3deg);
+      }
+      45% {
+        transform: rotate(-6deg);
+      }
+      50% {
+        transform: rotate(6deg);
+      }
+      55% {
+        transform: rotate(-6deg);
+      }
+      56% {
+        transform: rotate(-3deg);
+      }
+      57% {
+        transform: rotate(0deg);
+      }
+    }
 
     &__img {
-      background: url(../../img/toolkit.png) center/cover;
+      background: url(../../img/toolkit.webp) center/cover;
       @include imgToolkitSizePerWindowSize(691px, 526px);
     }
 
@@ -36,8 +124,26 @@
 
   .kit-fall {
     align-self: flex-end;
-    animation: falling-toolkit 0.5s;
     cursor: inherit;
+    animation: falling-toolkit 0.5s;
+
+    @keyframes falling-toolkit {
+      0% {
+        transform: rotate(0deg);
+      }
+      25% {
+        transform: rotate(-3deg);
+      }
+      50% {
+        transform: rotate(3deg);
+      }
+      75% {
+        transform: rotate(-3deg);
+      }
+      100% {
+        transform: rotate(0deg);
+      }
+    }
   }
 
   .tools {
@@ -58,27 +164,27 @@
     }
 
     &__hammer .tools__img {
-      background: url(../../img/hammer.png) center/cover;
+      background: url(../../img/hammer.webp) center/cover;
       @include imgToolkitSizePerWindowSize(269px, 257px);
     }
 
     &__measuring-tape .tools__img {
-      background: url(../../img/measuring-tape.png) center/cover;
+      background: url(../../img/measuring-tape.webp) center/cover;
       @include imgToolkitSizePerWindowSize(314px, 146px);
     }
 
     &__saw .tools__img {
-      background: url(../../img/saw.png) center/cover;
+      background: url(../../img/saw.webp) center/cover;
       @include imgToolkitSizePerWindowSize(548px, 144px);
     }
 
     &__screwdriver .tools__img {
-      background: url(../../img/screwdriver.png) center/cover;
+      background: url(../../img/screwdriver.webp) center/cover;
       @include imgToolkitSizePerWindowSize(445px, 66px);
     }
 
     &__spanner .tools__img {
-      background: url(../../img/spanner.png) center/cover;
+      background: url(../../img/spanner.webp) center/cover;
       @include imgToolkitSizePerWindowSize(376px, 276px);
     }
   }
@@ -93,7 +199,16 @@
         }
 
         .tools__img {
-          animation: stiring-continuously 2s infinite;
+          animation: stiring-continuously-toolkit 2s infinite;
+
+          @keyframes stiring-continuously-toolkit {
+            25% {
+              transform: rotate(-5deg);
+            }
+            75% {
+              transform: rotate(5deg);
+            }
+          }
         }
       }
     }
