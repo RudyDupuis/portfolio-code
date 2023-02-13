@@ -7,10 +7,6 @@
   h1 {
     font-family: $font-2;
     margin: 50px 0;
-
-    @media (max-width: 370px) {
-      margin: 60px 0 20px 0;
-    }
   }
 
   form {
@@ -24,8 +20,9 @@
     @media (max-width: 500px) {
       width: 80%;
     }
-    @media (max-width: 370px) {
-      height: 70%;
+
+    @media (max-width: 400px) {
+      height: 300px;
     }
 
     #name,

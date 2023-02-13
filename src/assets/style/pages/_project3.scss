@@ -1,4 +1,9 @@
 .project-3 {
+  header {
+    @media (max-width: 400px) {
+      position: relative;
+    }
+  }
   .project__right--img {
     animation: rotate-img-project3 3s;
 

@@ -1,4 +1,10 @@
 .about {
+  header {
+    @media (max-width: 300px) {
+      position: relative;
+    }
+  }
+
   &__container {
     min-height: 100vh;
     width: 90%;
@@ -8,20 +14,24 @@
     grid-template-rows: 1fr;
 
     @media (max-width: 1000px) {
+      width: 85%;
       grid-template-columns: 1fr;
       grid-template-rows: 10% 50% 40%;
     }
-
-    @media (max-width: 650px) {
-      grid-template-rows: 15% 45% 40%;
+    @media (max-width: 500px) {
+      width: 80%;
+      grid-template-rows: 15% 50% 35%;
     }
-
-    @media (max-width: 450px) {
-      grid-template-rows: 20% 40% 40%;
+    @media (max-width: 400px) {
+      grid-template-rows: 10% 60% 30%;
     }
-
+    @media (max-width: 350px) {
+      grid-template-rows: 10% 70% 20%;
+    }
     @media (max-width: 300px) {
-      grid-template-rows: 30% 35% 35%;
+      width: 70%;
+      min-height: auto;
+      display: block;
     }
 
     &--text {
@@ -35,15 +45,14 @@
 
       @media (max-width: 1000px) {
         margin: 0;
+        padding: 0;
         grid-column: 1;
         grid-row: 2;
       }
-
-      @media (max-width: 550px) {
+      @media (max-width: 500px) {
         font-size: 0.9rem;
       }
-
-      @media (max-width: 400px) {
+      @media (max-width: 300px) {
         font-size: 0.8rem;
       }
 

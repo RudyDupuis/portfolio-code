@@ -1,4 +1,9 @@
 .project-2 {
+  header {
+    @media (max-width: 400px) {
+      position: relative;
+    }
+  }
   .project-anim-1 {
     position: absolute;
     width: 48%;

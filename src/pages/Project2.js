@@ -7,12 +7,17 @@ const Project2 = () => {
   const anim = () => {
     const saw = document.querySelector(".project-anim-1");
     const plank = document.querySelector(".project-anim-2");
+    const page = document.querySelector(".project-2");
+
+    page.style.height = "document.body.offsetHeight";
+    page.style.overflow = "hidden";
 
     setTimeout(() => {
       plank.classList.add("plank-fall");
       saw.style.display = "none";
       setTimeout(() => {
         plank.style.display = "none";
+        page.style.overflow = "inherit";
       }, 2000);
     }, 2000);
   };

@@ -2,8 +2,20 @@ import SlideButtons from "../components/SlideButtons";
 import Header from "../components/Header";
 import PhotoOfMe from "../components/PhotoOfMe";
 import { motion } from "framer-motion";
+import { useEffect } from "react";
 
 const About = () => {
+  useEffect(() => {
+    const page = document.querySelector(".about");
+
+    page.style.height = "document.body.offsetHeight";
+    page.style.overflow = "hidden";
+
+    setTimeout(() => {
+      page.style.overflow = "inherit";
+    }, 1000);
+  }, []);
+
   const variants = {
     initial: {
       x: 100,
