@@ -11,6 +11,9 @@ const Project2 = () => {
     setTimeout(() => {
       plank.classList.add("plank-fall");
       saw.style.display = "none";
+      setTimeout(() => {
+        plank.style.display = "none";
+      }, 2000);
     }, 2000);
   };
 

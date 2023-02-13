@@ -1,6 +1,8 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 
 const DynamicText = () => {
+  const activeTimeouts = useRef([]);
+
   useEffect(() => {
     const target = document.getElementById("text-target");
     let words = ["Javascript", "React et redux js", "HTML CSS et Sass"];
@@ -35,7 +37,7 @@ const DynamicText = () => {
     };
 
     const loop = () => {
-      setTimeout(() => {
+      const timeout = setTimeout(() => {
         if (wordIndex >= words.length) {
           wordIndex = 0;
           letterIndex = 0;
@@ -47,10 +49,11 @@ const DynamicText = () => {
           loop();
         } else {
           if (letterIndexRemoving > 0 && letterIndexRemoving === letterIndex) {
-            setTimeout(() => {
+            const removeTimeout = setTimeout(() => {
               removeLetter();
               loop();
             }, 2000);
+            activeTimeouts.current.push(removeTimeout);
           } else if (letterIndexRemoving > 0) {
             removeLetter();
             loop();
@@ -61,8 +64,14 @@ const DynamicText = () => {
           }
         }
       }, 80);
+      activeTimeouts.current.push(timeout);
     };
     loop();
+
+    return () => {
+      activeTimeouts.current.forEach((timeout) => clearTimeout(timeout));
+      activeTimeouts.current = [];
+    };
   }, []);
 
   return <span id="text-target"></span>;

@@ -5,7 +5,11 @@ const Header = () => {
   return (
     <header>
       <NavLink to="/">
-        <p className="logo">RD</p>
+        <img
+          src="./img/logo.webp"
+          alt="Un R en forme de pince et un D"
+          className="logo"
+        />
       </NavLink>
       <nav>
         <ul>
