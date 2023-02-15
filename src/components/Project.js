@@ -29,6 +29,10 @@ const Project = ({ projectNumber }) => {
         <p>
           <i className="fa-solid fa-calendar-days"></i> {currentProject.date}
         </p>
+        <p>
+          <i className="fa-solid fa-cubes-stacked"></i>{" "}
+          {currentProject.techStack}
+        </p>
         <p>{currentProject.infos}</p>
       </motion.div>
       <div className="project__right">

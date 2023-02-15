@@ -1,9 +1,4 @@
 .project-1 {
-  header {
-    @media (max-width: 400px) {
-      position: relative;
-    }
-  }
   .project__right--img {
     transform-origin: 100% 0%;
     animation: rotate-img-project1 0.3s;

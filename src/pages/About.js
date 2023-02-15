@@ -6,6 +6,7 @@ import { useEffect } from "react";
 
 const About = () => {
   useEffect(() => {
+    /*** Prevent animation from modifying create scroll ***/
     const page = document.querySelector(".about");
 
     page.style.height = "document.body.offsetHeight";
@@ -14,6 +15,15 @@ const About = () => {
     setTimeout(() => {
       page.style.overflow = "inherit";
     }, 1000);
+
+    /*** Create a min-height of 100vh ***/
+    if (window.innerWidth < 1000) {
+      document.querySelector(
+        ".about__container"
+      ).style.minHeight = `calc(100vh - ${
+        document.querySelector("header").offsetHeight
+      }px`;
+    }
   }, []);
 
   const variants = {

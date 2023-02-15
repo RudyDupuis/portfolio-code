@@ -1,6 +1,6 @@
 .about {
   header {
-    @media (max-width: 300px) {
+    @media (max-width: 1000px) {
       position: relative;
     }
   }
@@ -14,24 +14,10 @@
     grid-template-rows: 1fr;
 
     @media (max-width: 1000px) {
-      width: 85%;
-      grid-template-columns: 1fr;
-      grid-template-rows: 10% 50% 40%;
-    }
-    @media (max-width: 500px) {
       width: 80%;
-      grid-template-rows: 15% 50% 35%;
-    }
-    @media (max-width: 400px) {
-      grid-template-rows: 10% 60% 30%;
-    }
-    @media (max-width: 350px) {
-      grid-template-rows: 10% 70% 20%;
-    }
-    @media (max-width: 300px) {
-      width: 70%;
-      min-height: auto;
-      display: block;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
 
     &--text {
@@ -44,15 +30,10 @@
       padding: 0 10%;
 
       @media (max-width: 1000px) {
-        margin: 0;
         padding: 0;
-        grid-column: 1;
-        grid-row: 2;
+        margin: auto 0;
       }
       @media (max-width: 500px) {
-        font-size: 0.9rem;
-      }
-      @media (max-width: 300px) {
         font-size: 0.8rem;
       }
 

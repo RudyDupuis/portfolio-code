@@ -9,6 +9,7 @@ const Project2 = () => {
     const plank = document.querySelector(".project-anim-2");
     const page = document.querySelector(".project-2");
 
+    /*** Prevent animation from modifying create scroll ***/
     page.style.height = "document.body.offsetHeight";
     page.style.overflow = "hidden";
 
