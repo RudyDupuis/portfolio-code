@@ -74,6 +74,14 @@ const About = () => {
             capacité d'adaptation rapide, je peux continuer à grandir et à
             apprendre dans ce domaine passionnant.
           </p>
+          <br />
+
+          <p>
+            <i class="fa-solid fa-file-arrow-up"></i>{" "}
+            <a href="./assets/RudyDupuis-DeveloppeurJavascript.pdf" download>
+              <strong>Télécharger mon CV</strong>
+            </a>
+          </p>
         </motion.div>
         <PhotoOfMe />
       </div>
