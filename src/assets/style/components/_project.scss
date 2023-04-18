@@ -1,6 +1,7 @@
 .project-1,
 .project-2,
-.project-3 {
+.project-3,
+.project-4 {
   header {
     @media (max-width: 800px) {
       position: relative;
@@ -72,6 +73,20 @@
       margin-top: 50px;
       display: flex;
       justify-content: space-evenly;
+
+      @media (max-width: 420px) {
+        flex-direction: column;
+        align-items: center;
+
+        a {
+          width: 80%;
+        }
+
+        button {
+          width: 100%;
+          margin: 15px 0;
+        }
+      }
     }
   }
 }

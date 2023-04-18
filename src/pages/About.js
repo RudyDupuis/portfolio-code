@@ -77,7 +77,7 @@ const About = () => {
           <br />
 
           <p>
-            <i class="fa-solid fa-file-arrow-up"></i>{" "}
+            <i className="fa-solid fa-file-arrow-up"></i>{" "}
             <a href="./assets/RudyDupuis-DeveloppeurJavascript.pdf" download>
               <strong>Télécharger mon CV</strong>
             </a>

@@ -18,7 +18,7 @@ const Project3 = () => {
     <main className="project-3">
       <Header />
       <Project projectNumber={2} />
-      <SlideButtons right={"/contact"} left={"/projet-2"} />
+      <SlideButtons right={"/projet-4"} left={"/projet-2"} />
     </main>
   );
 };

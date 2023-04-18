@@ -43,17 +43,3 @@ header {
   width: 35px;
   height: 38px;
 }
-
-.portfolio {
-  ul {
-    visibility: hidden;
-  }
-
-  p:hover ~ ul {
-    visibility: visible;
-  }
-
-  ul:hover {
-    visibility: visible;
-  }
-}

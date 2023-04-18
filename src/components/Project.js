@@ -33,7 +33,12 @@ const Project = ({ projectNumber }) => {
           <i className="fa-solid fa-cubes-stacked"></i>{" "}
           {currentProject.techStack}
         </p>
-        <p>{currentProject.infos}</p>
+        <p>
+          <i className="fa-solid fa-people-group"></i> {currentProject.team}
+        </p>
+        <p>
+          <i className="fa-solid fa-circle-info"></i> {currentProject.infos}
+        </p>
       </motion.div>
       <div className="project__right">
         <div className="project__right--img">
@@ -56,6 +61,15 @@ const Project = ({ projectNumber }) => {
           >
             <button className="button">Voir le GitHub</button>
           </a>
+          {currentProject.doc.length > 0 && (
+            <a
+              href={currentProject.doc}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <button className="button">Voir la Doc</button>
+            </a>
+          )}
         </div>
       </div>
     </section>

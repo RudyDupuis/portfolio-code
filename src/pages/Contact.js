@@ -72,7 +72,7 @@ const Contact = () => {
           </p>
         </motion.footer>
       </div>
-      <SlideButtons left={"/projet-3"} />
+      <SlideButtons left={"/projet-4"} />
     </main>
   );
 };
